@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB6170B12761628200DC0E8E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170B02761628200DC0E8E /* Model.swift */; };
+		AB6170B42761696E00DC0E8E /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = AB6170B32761696E00DC0E8E /* FocusEntity */; };
+		AB6170B82764F43100DC0E8E /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170B72764F43100DC0E8E /* ControlView.swift */; };
+		AB6170BA2764FE2D00DC0E8E /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170B92764FE2D00DC0E8E /* SheetView.swift */; };
+		AB6170BC2765161F00DC0E8E /* PlacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170BB2765161F00DC0E8E /* PlacementView.swift */; };
+		AB6170BE27651B0D00DC0E8E /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170BD27651B0D00DC0E8E /* CustomARView.swift */; };
+		AB6170C027655FA500DC0E8E /* ModelDeletionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170BF27655FA500DC0E8E /* ModelDeletionManager.swift */; };
+		AB6170C227665B6100DC0E8E /* shutter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB6170C127665B6100DC0E8E /* shutter.mp3 */; };
 		AB6F3CDC2760F73200B72786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F3CDB2760F73200B72786 /* AppDelegate.swift */; };
 		AB6F3CDE2760F73200B72786 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F3CDD2760F73200B72786 /* ContentView.swift */; };
 		AB6F3CE02760F73200B72786 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = AB6F3CDF2760F73200B72786 /* Experience.rcproject */; };
@@ -15,6 +23,11 @@
 		AB6F3CEF2760F73400B72786 /* dinosARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F3CEE2760F73400B72786 /* dinosARTests.swift */; };
 		AB6F3CF92760F73400B72786 /* dinosARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F3CF82760F73400B72786 /* dinosARUITests.swift */; };
 		AB6F3CFB2760F73400B72786 /* dinosARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F3CFA2760F73400B72786 /* dinosARUITestsLaunchTests.swift */; };
+		AB6F3D102761406500B72786 /* fender_stratocaster.usdz in Resources */ = {isa = PBXBuildFile; fileRef = AB6F3D0B2761406300B72786 /* fender_stratocaster.usdz */; };
+		AB6F3D112761406500B72786 /* toy_drummer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = AB6F3D0C2761406400B72786 /* toy_drummer.usdz */; };
+		AB6F3D122761406500B72786 /* toy_biplane.usdz in Resources */ = {isa = PBXBuildFile; fileRef = AB6F3D0D2761406400B72786 /* toy_biplane.usdz */; };
+		AB6F3D132761406500B72786 /* gramophone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = AB6F3D0E2761406400B72786 /* gramophone.usdz */; };
+		AB6F3D142761406500B72786 /* tv_retro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = AB6F3D0F2761406400B72786 /* tv_retro.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB6170B02761628200DC0E8E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		AB6170B72764F43100DC0E8E /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
+		AB6170B92764FE2D00DC0E8E /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		AB6170BB2765161F00DC0E8E /* PlacementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementView.swift; sourceTree = "<group>"; };
+		AB6170BD27651B0D00DC0E8E /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
+		AB6170BF27655FA500DC0E8E /* ModelDeletionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDeletionManager.swift; sourceTree = "<group>"; };
+		AB6170C127665B6100DC0E8E /* shutter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shutter.mp3; sourceTree = "<group>"; };
 		AB6F3CD82760F73200B72786 /* dinosAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dinosAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6F3CDB2760F73200B72786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB6F3CDD2760F73200B72786 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +66,12 @@
 		AB6F3CF42760F73400B72786 /* dinosARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dinosARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6F3CF82760F73400B72786 /* dinosARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dinosARUITests.swift; sourceTree = "<group>"; };
 		AB6F3CFA2760F73400B72786 /* dinosARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dinosARUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AB6F3D072760FF8B00B72786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AB6F3D0B2761406300B72786 /* fender_stratocaster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fender_stratocaster.usdz; sourceTree = "<group>"; };
+		AB6F3D0C2761406400B72786 /* toy_drummer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_drummer.usdz; sourceTree = "<group>"; };
+		AB6F3D0D2761406400B72786 /* toy_biplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane.usdz; sourceTree = "<group>"; };
+		AB6F3D0E2761406400B72786 /* gramophone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = gramophone.usdz; sourceTree = "<group>"; };
+		AB6F3D0F2761406400B72786 /* tv_retro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tv_retro.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6170B42761696E00DC0E8E /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,9 +123,18 @@
 		AB6F3CDA2760F73200B72786 /* dinosAR */ = {
 			isa = PBXGroup;
 			children = (
+				AB6F3D0A27613F8700B72786 /* Models */,
+				AB6F3D072760FF8B00B72786 /* Info.plist */,
 				AB6F3CDB2760F73200B72786 /* AppDelegate.swift */,
 				AB6F3CDD2760F73200B72786 /* ContentView.swift */,
+				AB6170BD27651B0D00DC0E8E /* CustomARView.swift */,
+				AB6170B72764F43100DC0E8E /* ControlView.swift */,
+				AB6170B92764FE2D00DC0E8E /* SheetView.swift */,
+				AB6170BB2765161F00DC0E8E /* PlacementView.swift */,
+				AB6170B02761628200DC0E8E /* Model.swift */,
+				AB6170BF27655FA500DC0E8E /* ModelDeletionManager.swift */,
 				AB6F3CDF2760F73200B72786 /* Experience.rcproject */,
+				AB6170C127665B6100DC0E8E /* shutter.mp3 */,
 				AB6F3CE12760F73400B72786 /* Assets.xcassets */,
 				AB6F3CE32760F73400B72786 /* Preview Content */,
 			);
@@ -130,6 +166,18 @@
 			path = dinosARUITests;
 			sourceTree = "<group>";
 		};
+		AB6F3D0A27613F8700B72786 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB6F3D0B2761406300B72786 /* fender_stratocaster.usdz */,
+				AB6F3D0E2761406400B72786 /* gramophone.usdz */,
+				AB6F3D0D2761406400B72786 /* toy_biplane.usdz */,
+				AB6F3D0C2761406400B72786 /* toy_drummer.usdz */,
+				AB6F3D0F2761406400B72786 /* tv_retro.usdz */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +194,9 @@
 			dependencies = (
 			);
 			name = dinosAR;
+			packageProductDependencies = (
+				AB6170B32761696E00DC0E8E /* FocusEntity */,
+			);
 			productName = dinosAR;
 			productReference = AB6F3CD82760F73200B72786 /* dinosAR.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +269,9 @@
 				Base,
 			);
 			mainGroup = AB6F3CCF2760F73200B72786;
+			packageReferences = (
+				AB6170B22761696E00DC0E8E /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
 			productRefGroup = AB6F3CD92760F73200B72786 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,8 +288,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6170C227665B6100DC0E8E /* shutter.mp3 in Resources */,
 				AB6F3CE52760F73400B72786 /* Preview Assets.xcassets in Resources */,
+				AB6F3D132761406500B72786 /* gramophone.usdz in Resources */,
+				AB6F3D122761406500B72786 /* toy_biplane.usdz in Resources */,
+				AB6F3D142761406500B72786 /* tv_retro.usdz in Resources */,
 				AB6F3CE22760F73400B72786 /* Assets.xcassets in Resources */,
+				AB6F3D102761406500B72786 /* fender_stratocaster.usdz in Resources */,
+				AB6F3D112761406500B72786 /* toy_drummer.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +321,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB6F3CDE2760F73200B72786 /* ContentView.swift in Sources */,
+				AB6170BA2764FE2D00DC0E8E /* SheetView.swift in Sources */,
+				AB6170BC2765161F00DC0E8E /* PlacementView.swift in Sources */,
+				AB6170BE27651B0D00DC0E8E /* CustomARView.swift in Sources */,
 				AB6F3CDC2760F73200B72786 /* AppDelegate.swift in Sources */,
 				AB6F3CE02760F73200B72786 /* Experience.rcproject in Sources */,
+				AB6170B82764F43100DC0E8E /* ControlView.swift in Sources */,
+				AB6170C027655FA500DC0E8E /* ModelDeletionManager.swift in Sources */,
+				AB6170B12761628200DC0E8E /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,9 +489,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dinosAR/Preview Content\"";
+				DEVELOPMENT_TEAM = 3GSVA9WBVH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_FILE = dinosAR/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Access requiered for AR experience";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Access required to save the photo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -453,9 +522,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dinosAR/Preview Content\"";
+				DEVELOPMENT_TEAM = 3GSVA9WBVH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_FILE = dinosAR/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Access requiered for AR experience";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Access required to save the photo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -607,6 +679,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB6170B22761696E00DC0E8E /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB6170B32761696E00DC0E8E /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB6170B22761696E00DC0E8E /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB6F3CD02760F73200B72786 /* Project object */;
 }
