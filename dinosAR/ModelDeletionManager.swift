@@ -18,17 +18,17 @@ class ModelDeletionManager: ObservableObject {
                 
                 // Highight newSelectedModelEntity
                 let component = ModelDebugOptionsComponent(visualizationMode: .lightingDiffuse)
-
+                
                 newlySelectedModelEntity.modelDebugOptions = component
                 arView.installGestures(.all, for: newlySelectedModelEntity)
-
+                
             } else if let previouslySelectedModelEntity = self.entitySelectedForDeletion, let newlySelectedModelEntity = newValue{
                 // Selected new entitySelectedForDeletion, had a prior selection
                 
                 // Un-highight newSelectedModelEntity
                 previouslySelectedModelEntity.modelDebugOptions = nil
                 arView.installGestures(.all, for: newlySelectedModelEntity)
-
+                
                 // Highight newSelectedModelEntity
                 let component = ModelDebugOptionsComponent(visualizationMode: .lightingDiffuse)
                 newlySelectedModelEntity.modelDebugOptions = component
@@ -36,7 +36,7 @@ class ModelDeletionManager: ObservableObject {
                 
                 // Claring entitySelectedForDeletion
                 self.entitySelectedForDeletion?.modelDebugOptions = nil
-
+                
             }
             
         }

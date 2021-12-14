@@ -5,13 +5,11 @@
 //  Created by Vito Gallo on 08/12/21.
 //
 
-//import ARKit
 import SwiftUI
 import RealityKit
 import AudioToolbox
 import FocusEntity
 
-//@EnvironmentObject var modelDeletionManager: ModelDeletionManager
 var modelDeletionManager = ModelDeletionManager()
 let arView = CustomARView(frame: .zero, modelDeletionManager: modelDeletionManager)
 var sceneManager: SceneManager = SceneManager()
@@ -22,7 +20,6 @@ struct ContentView : View {
     @State var isPlacementEnabled: Bool = false
     @State var selectedModel: Model?
     @State var modelConfirmedForPlacement: Model?
-//    @State var modelDeletionManager: ModelDeletionManager?
     
     var body: some View {
         ZStack(alignment: .bottom){
@@ -73,10 +70,6 @@ struct ARViewContainer: UIViewRepresentable {
     @Binding var selectedModel: Model?
     @Binding var modelConfirmedForPlacement: Model?
     
-
-//    @StateObject var sceneManager: SceneManager
-//    @EnvironmentObject var sceneManager: SceneManager
-    
     func makeUIView(context: Context) -> CustomARView {
 
         // Add coaching overlay
@@ -109,10 +102,7 @@ struct ARViewContainer: UIViewRepresentable {
                 anchorEntity.addChild(modelEntity.clone(recursive: true))
                 uiView.scene.addAnchor(anchorEntity)
                 sceneManager.anchorEntities.append(anchorEntity)
-//                modelEntity.generateCollisionShapes(recursive: true)
-//                arView.installGestures([.translation, .rotation, .scale], for: modelEntity)
             }
-//            print(uiView.scene.anchors.)
             
             DispatchQueue.main.async {
                 self.modelConfirmedForPlacement = nil
@@ -123,26 +113,13 @@ struct ARViewContainer: UIViewRepresentable {
         // Occlusion(?)
 //        arView.environment.sceneUnderstanding.options.insert(.occlusion)
         
-//        var modelEntity = model.modelEntity
-        
-//        func abc(on object: ModelEntity){
-//        object.generateCollisionShapes(recursive: true)
-//        arView.installGestures(.scale, for: object)
-//        }
     }
-    
-//    func abc(){
-//        guard let anchor = modelDeletionManager.entitySelectedForDeletion?.anchor else {return}
-//    }
-  
 
 
-    
 
 }
 
 class SceneManager: ObservableObject{
-//    @Published var isPersistanceAvailable: Bool = false
     @Published var anchorEntities: [AnchorEntity] = []
 }
 
@@ -163,7 +140,6 @@ struct ControlView: View {
     @Binding var showSheet: Bool
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
-//    @Binding var modelDeletionManager: ModelDeletionManager
     @State var shouldFlash = false
 
     var body: some View {
@@ -183,16 +159,14 @@ struct ControlView: View {
 }
 
 struct ControlTopBar: View{
-//    @Binding var sceneManager: SceneManager
     var body: some View{
         HStack{
             ControlButton(systemIconName: "xmark.circle"){
                 guard let anchor = modelDeletionManager.entitySelectedForDeletion?.anchor else {return}
-//
+
                 let anchoringIdentifier = anchor.anchorIdentifier
                 if let index = sceneManager.anchorEntities.firstIndex(where: {$0.anchorIdentifier == anchoringIdentifier}){
                     sceneManager.anchorEntities.remove(at: index)
-//                    print(sceneManager.anchorEntities.count)
                 }
                 anchor.removeFromParent()
                 modelDeletionManager.entitySelectedForDeletion = nil

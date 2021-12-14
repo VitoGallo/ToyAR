@@ -36,17 +36,14 @@ class Model{
             //Get our modelEntity
             self.modelEntity = modelEntity
             self.installGestures(on: modelEntity)
-//            arView.installGestures(.all, for: modelEntity)
-//            modelEntity.generateCollisionShapes(recursive: true)
-//            arView.installGestures([.translation, .rotation, .scale], for: modelEntity)
-
+            
         })
     }
     
     func installGestures(on object: ModelEntity){
         object.generateCollisionShapes(recursive: false)
         arView.installGestures([.translation, .rotation, .scale], for: object)
-
+        
     }
     
 }
