@@ -12,11 +12,11 @@ import FocusEntity
 class CustomARView: ARView {
     
     var focusEntity: FocusEntity?
-    var modelDelectionManager: ModelDeletionManager
+    var modelDeletionManager: ModelDeletionManager
     
     required init(frame frameRect: CGRect, modelDeletionManager: ModelDeletionManager) {
         
-        self.modelDelectionManager = modelDeletionManager
+        self.modelDeletionManager = modelDeletionManager
 
         super.init(frame: frameRect)
         
@@ -28,12 +28,12 @@ class CustomARView: ARView {
 
     }
     
-    @objc required dynamic init?(coder decoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required dynamic init(frame frameRect: CGRect) {
+        fatalError("init(frame:) has not been implemented")
     }
     
-    @objc required dynamic init(frame frameRect: CGRect) {
-        fatalError("init(frame:) has not been implemented")
+    @objc required dynamic init?(coder decoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
@@ -64,9 +64,17 @@ extension CustomARView{
 //     print(touchLocation)
 
 //        if let entity = self.entity(at: CGPoint(x: 100, y: 100)) as? ModelEntity{
+        
+        
+        
         if let entity = arView.entity(at: touchLocation) as? ModelEntity{
-            modelDelectionManager.entitySelectedForDeletion = entity
+    
+
+            modelDeletionManager.entitySelectedForDeletion = entity
         }
+        
+        
+        
 //        print("ciao 1 \(arView.entity(at: touchLocation))")
 //        print("ciao 2 \(self.entity(at: touchLocation))")
 //        print("ciao 2 \(self.entity(at: touchLocation))")

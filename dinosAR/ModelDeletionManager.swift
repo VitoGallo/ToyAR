@@ -18,8 +18,9 @@ class ModelDeletionManager: ObservableObject {
                 
                 // Highight newSelectedModelEntity
                 let component = ModelDebugOptionsComponent(visualizationMode: .lightingDiffuse)
-                
+
                 newlySelectedModelEntity.modelDebugOptions = component
+
             } else if let previouslySelectedModelEntity = self.entitySelectedForDeletion, let newlySelectedModelEntity = newValue{
                 // Selected new entitySelectedForDeletion, had a prior selection
                 
