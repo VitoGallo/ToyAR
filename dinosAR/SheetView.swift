@@ -11,6 +11,7 @@ struct SheetView: View {
     @Binding var showSheet: Bool
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
+
     
     var models: [Model] = {
         let filemanager = FileManager.default
@@ -41,6 +42,8 @@ struct SheetView: View {
         }
         
     }
+    
+
 }
 
 struct ModelPicker: View{

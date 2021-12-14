@@ -25,6 +25,8 @@ class CustomARView: ARView {
         configure()
         
         self.enableObjectDelection()
+        
+//        self.installGestures(.all, for: )
 
     }
     
