@@ -16,8 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        let modelDeletionManager = ModelDeletionManager()
+        let arView = CustomARView(frame: .zero, modelDeletionManager: modelDeletionManager)
+
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
+            .environmentObject(modelDeletionManager)
+            .environmentObject(arView)
 
         // Use a UIHostingController as window root view controller.
         let window = UIWindow(frame: UIScreen.main.bounds)

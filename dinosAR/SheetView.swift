@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import CoreML
 
 struct SheetView: View {
+    var arView: CustomARView
     @Binding var showSheet: Bool
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
@@ -23,7 +25,10 @@ struct SheetView: View {
         var avaibleModels: [Model] = []
         for filename in files where filename.hasSuffix("usdz"){
             let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
-            let model = Model(modelName: modelName)
+            let model = Model(modelName: modelName) {
+                model in
+//                arView.installGestures([.translation, .rotation, .scale], for: model)
+            }
             
             avaibleModels.append(model)
         }

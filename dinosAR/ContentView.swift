@@ -10,8 +10,6 @@ import RealityKit
 import AudioToolbox
 import FocusEntity
 
-var modelDeletionManager = ModelDeletionManager()
-let arView = CustomARView(frame: .zero, modelDeletionManager: modelDeletionManager)
 var sceneManager: SceneManager = SceneManager()
 
 struct ContentView : View {
@@ -20,6 +18,10 @@ struct ContentView : View {
     @State var isPlacementEnabled: Bool = false
     @State var selectedModel: Model?
     @State var modelConfirmedForPlacement: Model?
+
+    @EnvironmentObject var model: ModelDeletionManager
+    @EnvironmentObject var arView: CustomARView
+
     
     var body: some View {
         ZStack(alignment: .bottom){
@@ -69,6 +71,7 @@ struct ContentView : View {
 struct ARViewContainer: UIViewRepresentable {
     @Binding var selectedModel: Model?
     @Binding var modelConfirmedForPlacement: Model?
+    @EnvironmentObject var arView: CustomARView
     
     func makeUIView(context: Context) -> CustomARView {
 
@@ -93,20 +96,24 @@ struct ARViewContainer: UIViewRepresentable {
 
         arView.focusEntity?.isEnabled = self.selectedModel != nil
         
-        
         if let model = self.modelConfirmedForPlacement {
-            
+//            arView.installGestures(.all, for: model.modelEntity)
+
             if let modelEntity = model.modelEntity{
-              
+                modelEntity.name = model.modelName
                 let anchorEntity = AnchorEntity(plane: .any)
                 anchorEntity.addChild(modelEntity.clone(recursive: true))
                 uiView.scene.addAnchor(anchorEntity)
                 sceneManager.anchorEntities.append(anchorEntity)
+
+//                sceneManager.anchorEntitiesName.append(model.modelName)
+
             }
             
             DispatchQueue.main.async {
                 self.modelConfirmedForPlacement = nil
             }
+            
             
     
         }
@@ -121,6 +128,7 @@ struct ARViewContainer: UIViewRepresentable {
 
 class SceneManager: ObservableObject{
     @Published var anchorEntities: [AnchorEntity] = []
+//    @Published var anchorEntitiesName: [String] = []
 }
 
 
@@ -142,6 +150,8 @@ struct ControlView: View {
     @Binding var selectedModel: Model?
     @State var shouldFlash = false
 
+    
+
     var body: some View {
         ZStack{
         VStack{
@@ -159,25 +169,45 @@ struct ControlView: View {
 }
 
 struct ControlTopBar: View{
+    @EnvironmentObject var model: ModelDeletionManager
+
     var body: some View{
         HStack{
             ControlButton(systemIconName: "xmark.circle"){
-                guard let anchor = modelDeletionManager.entitySelectedForDeletion?.anchor else {return}
+                guard let anchor = model.entitySelectedForDeletion?.anchor else {return}
 
                 let anchoringIdentifier = anchor.anchorIdentifier
                 if let index = sceneManager.anchorEntities.firstIndex(where: {$0.anchorIdentifier == anchoringIdentifier}){
+
                     sceneManager.anchorEntities.remove(at: index)
+//                    sceneManager.anchorEntitiesName.remove(at: index)
+//                    print(sceneManager.anchorEntitiesName)
                 }
                 anchor.removeFromParent()
-                modelDeletionManager.entitySelectedForDeletion = nil
+                model.currentImage = ""
+                model.entitySelectedForDeletion = nil
             }
-            
             Spacer()
             
+            Image(model.currentImage)
+                .resizable()
+                .frame(height: 150)
+                .aspectRatio(1/1, contentMode: .fit)
+                .background(Color.white)
+                .cornerRadius(12)
+               
+            
+            
+            Spacer()
+         
             ControlButton(systemIconName: "arrow.counterclockwise.circle"){
                 for anchorEntity in sceneManager.anchorEntities{
                     anchorEntity.removeFromParent()
+                    model.currentImage = ""
+
                 }
+//                sceneManager.anchorEntitiesName = []
+//                print(sceneManager.anchorEntitiesName)
 //                arView.scene.anchors.removeAll()
 
                 
@@ -191,6 +221,7 @@ struct ControlTopBar: View{
 
 
 struct ControlBottomBar: View{
+    @EnvironmentObject var arView: CustomARView
     @Binding var showSheet: Bool
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
@@ -204,7 +235,7 @@ struct ControlBottomBar: View{
                 self.showSheet.toggle()
                 
             }.sheet(isPresented: $showSheet, content: {
-                SheetView(showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel)
+                SheetView(arView: arView, showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel)
             })
             Spacer()
             
@@ -221,6 +252,16 @@ struct ControlBottomBar: View{
             .padding(.horizontal, 30)
             .padding(.bottom, 15)
     }
+    
+    
+    func takeSnapshot(){
+        arView.snapshot(saveToHDR: false){(image) in
+            let compressedImage = UIImage(data:(image?.pngData())!)
+            UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+        }
+    }
+
+
 }
 
 
@@ -238,15 +279,8 @@ struct ControlButton: View{
                 .buttonStyle(PlainButtonStyle())
         }.frame(width: 50, height: 50)
     }
+    
 }
-
-func takeSnapshot(){
-    arView.snapshot(saveToHDR: false){(image) in
-        let compressedImage = UIImage(data:(image?.pngData())!)
-        UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
-    }
-}
-
 
 struct FlashView: UIViewRepresentable {
     @Binding var shouldFlash: Bool

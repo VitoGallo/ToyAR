@@ -8,23 +8,28 @@
 import RealityKit
 import ARKit
 import FocusEntity
+import SwiftUI
 
-class CustomARView: ARView {
+class CustomARView: ARView, ObservableObject {
     
     var focusEntity: FocusEntity?
     var modelDeletionManager: ModelDeletionManager
-    
+    var entityNameSelected: String = ""
+
     required init(frame frameRect: CGRect, modelDeletionManager: ModelDeletionManager) {
         
         self.modelDeletionManager = modelDeletionManager
         
         super.init(frame: frameRect)
         
+        
         focusEntity = FocusEntity(on: self, focus: .classic)
         
         configure()
         
         self.enableObjectDelection()
+        
+        
         
     }
     
@@ -35,7 +40,9 @@ class CustomARView: ARView {
     @objc required dynamic init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+//    func getstring() -> String?{
+//        return entityNameSelected
+//    }
     
     private func configure(){
         
@@ -61,11 +68,13 @@ extension CustomARView{
     @objc func handleTap(recognizer: UITapGestureRecognizer){
         
         let touchLocation = recognizer.location(in: self)
-        
-        if let entity = arView.entity(at: touchLocation) as? ModelEntity{
-            
-            
+        if let entity = self.entity(at: touchLocation) as? ModelEntity{
+
+//            entityNameSelected = entity.name
+//            aaa = entityNameSelected
+//            print(entityNameSelected)
             modelDeletionManager.entitySelectedForDeletion = entity
+            modelDeletionManager.updateCurrentImage(with: entity.name)
         }
         
         
