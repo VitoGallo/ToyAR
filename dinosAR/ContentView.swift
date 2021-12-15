@@ -32,6 +32,8 @@ struct ContentView : View {
                 PlacementView(isPlacementEnabled: self.$isPlacementEnabled, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
 //            } else if modelDeletionManager.entitySelectedForDeletion != nil{
 //                DelectionView()
+            } else if self.showSheet {
+                SheetView(arView: arView, showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel)
             } else{
                 ControlView(showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel)
             }
@@ -232,12 +234,11 @@ struct ControlBottomBar: View{
         HStack{
                         
             ControlButton(systemIconName: "plus.circle"){
-                self.showSheet.toggle()
-                
-            }.sheet(isPresented: $showSheet, content: {
-                SheetView(arView: arView, showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel)
-            })
-            Spacer()
+                self.showSheet = true
+            }
+//            .sheet(isPresented: $showSheet, content: {
+//                SheetView(arView: arView, showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel)
+//            })
             
             Spacer()
             
