@@ -103,11 +103,13 @@ struct ARViewContainer: UIViewRepresentable {
 
             if let modelEntity = model.modelEntity{
                 modelEntity.name = model.modelName
+//                print("VVVVV\(modelEntity.name)")
                 let anchorEntity = AnchorEntity(plane: .any)
                 anchorEntity.addChild(modelEntity.clone(recursive: true))
                 uiView.scene.addAnchor(anchorEntity)
                 sceneManager.anchorEntities.append(anchorEntity)
-
+                
+//                modelEntity.playAnimation(modelEntity.availableAnimations.first!)
 //                sceneManager.anchorEntitiesName.append(model.modelName)
 
             }
@@ -175,31 +177,35 @@ struct ControlTopBar: View{
 
     var body: some View{
         HStack{
-            ControlButton(systemIconName: "xmark.circle"){
-                guard let anchor = model.entitySelectedForDeletion?.anchor else {return}
-
-                let anchoringIdentifier = anchor.anchorIdentifier
-                if let index = sceneManager.anchorEntities.firstIndex(where: {$0.anchorIdentifier == anchoringIdentifier}){
-
-                    sceneManager.anchorEntities.remove(at: index)
-//                    sceneManager.anchorEntitiesName.remove(at: index)
-//                    print(sceneManager.anchorEntitiesName)
-                }
-                anchor.removeFromParent()
-                model.currentImage = ""
-                model.entitySelectedForDeletion = nil
+            ControlButton(systemIconName: "questionmark.circle"){
+                
             }
-            Spacer()
             
-            Image(model.currentImage)
-                .resizable()
-                .frame(height: 150)
-                .aspectRatio(1/1, contentMode: .fit)
-                .background(Color.white)
-                .cornerRadius(12)
-               
-            
-            
+//            ControlButton(systemIconName: "xmark.circle"){
+//                guard let anchor = model.entitySelectedForDeletion?.anchor else {return}
+//
+//                let anchoringIdentifier = anchor.anchorIdentifier
+//                if let index = sceneManager.anchorEntities.firstIndex(where: {$0.anchorIdentifier == anchoringIdentifier}){
+//
+//                    sceneManager.anchorEntities.remove(at: index)
+////                    sceneManager.anchorEntitiesName.remove(at: index)
+////                    print(sceneManager.anchorEntitiesName)
+//                }
+//                anchor.removeFromParent()
+//                model.currentImage = ""
+//                model.entitySelectedForDeletion = nil
+//            }
+//            Spacer()
+//
+//            Image(model.currentImage)
+//                .resizable()
+//                .frame(height: 150)
+//                .aspectRatio(1/1, contentMode: .fit)
+//                .background(Color.white)
+//                .cornerRadius(12)
+//
+//
+//
             Spacer()
          
             ControlButton(systemIconName: "arrow.counterclockwise.circle"){
@@ -224,6 +230,7 @@ struct ControlTopBar: View{
 
 struct ControlBottomBar: View{
     @EnvironmentObject var arView: CustomARView
+    @EnvironmentObject var model: ModelDeletionManager
     @Binding var showSheet: Bool
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
@@ -231,21 +238,61 @@ struct ControlBottomBar: View{
 
     var body: some View{
 
-        HStack{
-                        
+        HStack(alignment: .bottom){
+            
+            VStack{
+                ControlButton(systemIconName: "trash.circle"){
+                    guard let anchor = model.entitySelectedForDeletion?.anchor else {return}
+                 
+                                 let anchoringIdentifier = anchor.anchorIdentifier
+                                 if let index = sceneManager.anchorEntities.firstIndex(where: {$0.anchorIdentifier == anchoringIdentifier}){
+                 
+                                     sceneManager.anchorEntities.remove(at: index)
+                 //                    sceneManager.anchorEntitiesName.remove(at: index)
+                 //                    print(sceneManager.anchorEntitiesName)
+                                 }
+                                 anchor.removeFromParent()
+                                 model.currentImage = ""
+                                 model.entitySelectedForDeletion = nil
+                }.padding(.bottom)
+                
             ControlButton(systemIconName: "plus.circle"){
                 self.showSheet = true
             }
 //            .sheet(isPresented: $showSheet, content: {
 //                SheetView(arView: arView, showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel)
 //            })
+            }
+            Spacer()
+            ZStack{
+                Circle()
+                
+                    .fill(Color.clear)
+                    .frame(height: 120)
+                    .overlay(Circle().stroke(Color.white, lineWidth: 5))
+                    
+
+                
+            Image(model.currentImage)
+//
+
+                     .resizable()
+                     .scaledToFit()
+                     .frame(height: 105)
+                     .background(Color.clear)
+                     .cornerRadius(12)
+                     .clipShape(Circle())
+                     .shadow(radius: 10)
+//                     .overlay(Circle().stroke(Color.red, lineWidth: 5))
+            }
             
             Spacer()
-            
+                
             ControlButton(systemIconName: "camera.circle"){
 
                 takeSnapshot()
                 shouldFlash = true
+            
             }
             
             

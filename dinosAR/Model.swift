@@ -43,6 +43,8 @@ class Model{
             //Get our modelEntity
             self.modelEntity = modelEntity
             self.installGestures(on: modelEntity)
+            print(modelEntity.availableAnimations.count)
+//            modelEntity.playAnimation(modelEntity.availableAnimations.first!)
 //            arView.installGestures(.all, for: self)
 
             
@@ -50,10 +52,10 @@ class Model{
     }
     
     func installGestures(on object: ModelEntity){
-        object.generateCollisionShapes(recursive: false)
+        object.generateCollisionShapes(recursive: true)
 //        arView.installGestures(.all, for: object)
 
-        
+
         installGestureOnArkit(object)
     }
     

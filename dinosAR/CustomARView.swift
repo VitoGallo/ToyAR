@@ -69,12 +69,17 @@ extension CustomARView{
         
         let touchLocation = recognizer.location(in: self)
         if let entity = self.entity(at: touchLocation) as? ModelEntity{
+           
 
-//            entityNameSelected = entity.name
+//            print("DES\(entity.)")
+            entityNameSelected = entity.name
 //            aaa = entityNameSelected
 //            print(entityNameSelected)
             modelDeletionManager.entitySelectedForDeletion = entity
+            print("AAAAA \(entity)")
             modelDeletionManager.updateCurrentImage(with: entity.name)
+            print("BBBBBB \(entity.name)")
+
         }
         
         
