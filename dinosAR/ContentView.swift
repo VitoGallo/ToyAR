@@ -209,6 +209,7 @@ struct ControlTopBar: View{
             Spacer()
          
             ControlButton(systemIconName: "arrow.counterclockwise.circle"){
+                model.isTapped = false
                 for anchorEntity in sceneManager.anchorEntities{
                     anchorEntity.removeFromParent()
                     model.currentImage = ""
@@ -241,7 +242,10 @@ struct ControlBottomBar: View{
         HStack(alignment: .bottom){
             
             VStack{
+                if model.isTapped {
                 ControlButton(systemIconName: "trash.circle"){
+                    model.isTapped = false
+
                     guard let anchor = model.entitySelectedForDeletion?.anchor else {return}
                  
                                  let anchoringIdentifier = anchor.anchorIdentifier
@@ -255,7 +259,7 @@ struct ControlBottomBar: View{
                                  model.currentImage = ""
                                  model.entitySelectedForDeletion = nil
                 }.padding(.bottom)
-                
+                }
             ControlButton(systemIconName: "plus.circle"){
                 self.showSheet = true
             }
@@ -264,6 +268,7 @@ struct ControlBottomBar: View{
 //            })
             }
             Spacer()
+            if model.isTapped {
             ZStack{
                 Circle()
                 
@@ -285,7 +290,7 @@ struct ControlBottomBar: View{
                      .shadow(radius: 10)
 //                     .overlay(Circle().stroke(Color.red, lineWidth: 5))
             }
-            
+            }
             Spacer()
                 
             ControlButton(systemIconName: "camera.circle"){

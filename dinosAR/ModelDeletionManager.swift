@@ -12,6 +12,7 @@ import UIKit
 class ModelDeletionManager: ObservableObject {
     
     @EnvironmentObject var arView: CustomARView
+    @Published var isTapped: Bool = false
     
     @Published var currentImage: String = ""
     @Published var entitySelectedForDeletion: ModelEntity? = nil{
@@ -20,7 +21,7 @@ class ModelDeletionManager: ObservableObject {
             
             if self.entitySelectedForDeletion == nil, let newlySelectedModelEntity = newValue{
                 // Selected new entitySelectedForDeletion, no prior selection
-                
+                isTapped = true
                 // Highight newSelectedModelEntity
 //                let component = ModelDebugOptionsComponent(visualizationMode: .lightingDiffuse)
         
