@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB392193276BB22200375942 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB392192276BB22200375942 /* Onboarding.swift */; };
+		AB392195276BF94E00375942 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB392194276BF94E00375942 /* Info.swift */; };
+		AB392197276C019A00375942 /* track.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB392196276C019A00375942 /* track.gif */; };
 		AB6170B12761628200DC0E8E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170B02761628200DC0E8E /* Model.swift */; };
 		AB6170B42761696E00DC0E8E /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = AB6170B32761696E00DC0E8E /* FocusEntity */; };
 		AB6170B82764F43100DC0E8E /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170B72764F43100DC0E8E /* ControlView.swift */; };
@@ -48,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB392192276BB22200375942 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		AB392194276BF94E00375942 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		AB392196276C019A00375942 /* track.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = track.gif; sourceTree = "<group>"; };
 		AB6170B02761628200DC0E8E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AB6170B72764F43100DC0E8E /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		AB6170B92764FE2D00DC0E8E /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
@@ -126,8 +132,10 @@
 				AB6F3D0A27613F8700B72786 /* Models */,
 				AB6F3D072760FF8B00B72786 /* Info.plist */,
 				AB6F3CDB2760F73200B72786 /* AppDelegate.swift */,
+				AB392192276BB22200375942 /* Onboarding.swift */,
 				AB6F3CDD2760F73200B72786 /* ContentView.swift */,
 				AB6170BD27651B0D00DC0E8E /* CustomARView.swift */,
+				AB392194276BF94E00375942 /* Info.swift */,
 				AB6170B72764F43100DC0E8E /* ControlView.swift */,
 				AB6170B92764FE2D00DC0E8E /* SheetView.swift */,
 				AB6170BB2765161F00DC0E8E /* PlacementView.swift */,
@@ -135,6 +143,7 @@
 				AB6170BF27655FA500DC0E8E /* ModelDeletionManager.swift */,
 				AB6F3CDF2760F73200B72786 /* Experience.rcproject */,
 				AB6170C127665B6100DC0E8E /* shutter.mp3 */,
+				AB392196276C019A00375942 /* track.gif */,
 				AB6F3CE12760F73400B72786 /* Assets.xcassets */,
 				AB6F3CE32760F73400B72786 /* Preview Content */,
 			);
@@ -296,6 +305,7 @@
 				AB6F3CE22760F73400B72786 /* Assets.xcassets in Resources */,
 				AB6F3D102761406500B72786 /* fender_stratocaster.usdz in Resources */,
 				AB6F3D112761406500B72786 /* toy_drummer.usdz in Resources */,
+				AB392197276C019A00375942 /* track.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +332,7 @@
 			files = (
 				AB6F3CDE2760F73200B72786 /* ContentView.swift in Sources */,
 				AB6170BA2764FE2D00DC0E8E /* SheetView.swift in Sources */,
+				AB392193276BB22200375942 /* Onboarding.swift in Sources */,
 				AB6170BC2765161F00DC0E8E /* PlacementView.swift in Sources */,
 				AB6170BE27651B0D00DC0E8E /* CustomARView.swift in Sources */,
 				AB6F3CDC2760F73200B72786 /* AppDelegate.swift in Sources */,
@@ -329,6 +340,7 @@
 				AB6170B82764F43100DC0E8E /* ControlView.swift in Sources */,
 				AB6170C027655FA500DC0E8E /* ModelDeletionManager.swift in Sources */,
 				AB6170B12761628200DC0E8E /* Model.swift in Sources */,
+				AB392195276BF94E00375942 /* Info.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

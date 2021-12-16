@@ -19,16 +19,14 @@ class CustomARView: ARView, ObservableObject {
     required init(frame frameRect: CGRect, modelDeletionManager: ModelDeletionManager) {
         
         self.modelDeletionManager = modelDeletionManager
-        
+                        
         super.init(frame: frameRect)
-        
         
         focusEntity = FocusEntity(on: self, focus: .classic)
         
         configure()
         
         self.enableObjectDelection()
-        
         
         
     }
@@ -52,6 +50,14 @@ class CustomARView: ARView, ObservableObject {
         config.planeDetection = [.horizontal, .vertical]
         config.environmentTexturing = .automatic
         
+//        if selectedModel = {
+        let coachingOverlay = ARCoachingOverlayView()
+        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        coachingOverlay.session = session
+        coachingOverlay.goal = .horizontalPlane
+        self.addSubview(coachingOverlay)
+//        }
+
         if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
             config.sceneReconstruction = .mesh
         }
@@ -79,7 +85,6 @@ extension CustomARView{
             print("AAAAA \(entity)")
             modelDeletionManager.updateCurrentImage(with: entity.name)
             print("BBBBBB \(entity.name)")
-
         }
         
         

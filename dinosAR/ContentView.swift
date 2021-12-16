@@ -15,6 +15,8 @@ var sceneManager: SceneManager = SceneManager()
 struct ContentView : View {
     
     @State private var showSheet: Bool = false
+    @State private var showInfo: Bool = false
+    
     @State var isPlacementEnabled: Bool = false
     @State var selectedModel: Model?
     @State var modelConfirmedForPlacement: Model?
@@ -35,7 +37,7 @@ struct ContentView : View {
             } else if self.showSheet {
                 SheetView(arView: arView, showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel)
             } else{
-                ControlView(showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel)
+                ControlView(showSheet: $showSheet, showInfo: $showInfo, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel)
             }
         }
     }
@@ -78,12 +80,12 @@ struct ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> CustomARView {
 
         // Add coaching overlay
-        //ARCoachingOverlayView which guides the user until the first plane is found
-        //        let coachingOverlay = ARCoachingOverlayView()
-        //        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        //        coachingOverlay.session = session
-        //        coachingOverlay.goal = .horizontalPlane
-        //        arView.addSubview(coachingOverlay)
+//        ARCoachingOverlayView which guides the user until the first plane is found
+//                let coachingOverlay = ARCoachingOverlayView()
+//                coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//                coachingOverlay.session = session
+//                coachingOverlay.goal = .horizontalPlane
+//                arView.addSubview(coachingOverlay)
         
         // Set debug options
         //        #if DEBUG
@@ -150,6 +152,8 @@ class SceneManager: ObservableObject{
 
 struct ControlView: View {
     @Binding var showSheet: Bool
+    @Binding var showInfo: Bool
+
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
     @State var shouldFlash = false
@@ -159,7 +163,7 @@ struct ControlView: View {
     var body: some View {
         ZStack{
         VStack{
-            ControlTopBar()
+            ControlTopBar(showInfo: $showInfo)
 
             Spacer()
             
@@ -174,12 +178,15 @@ struct ControlView: View {
 
 struct ControlTopBar: View{
     @EnvironmentObject var model: ModelDeletionManager
+    @Binding var showInfo: Bool
 
     var body: some View{
         HStack{
             ControlButton(systemIconName: "questionmark.circle"){
-                
-            }
+                showInfo = true
+            }.sheet(isPresented: $showInfo, content: {
+                Info(showInfo: $showInfo)
+                            })
             
 //            ControlButton(systemIconName: "xmark.circle"){
 //                guard let anchor = model.entitySelectedForDeletion?.anchor else {return}
@@ -263,9 +270,6 @@ struct ControlBottomBar: View{
             ControlButton(systemIconName: "plus.circle"){
                 self.showSheet = true
             }
-//            .sheet(isPresented: $showSheet, content: {
-//                SheetView(arView: arView, showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel)
-//            })
             }
             Spacer()
             if model.isTapped {
