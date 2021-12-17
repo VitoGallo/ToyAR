@@ -78,7 +78,7 @@ struct SheetView: View {
                 
         VStack{
             HStack{
-            Text("Select the object:").font(.title)
+            Text("Select the object:").font(.title2)
                 Spacer()
             }.padding(.horizontal, 22)
                 .padding(.bottom, 10)
@@ -96,7 +96,8 @@ struct SheetView: View {
                     RoundedRectangle(cornerRadius: 30)
                     Rectangle()
                         .frame(height: curHeight/2)
-                }.foregroundColor(Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
+                }.foregroundColor(Color.white)
+//                    .foregroundColor(Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
             ).animation(isDragging ? nil : .easeInOut(duration: 0.45), value: 1.0)
     }
     @State private var prevDragTranslation = CGSize.zero
@@ -155,12 +156,19 @@ struct ModelPicker: View{
                         self.showSheet = false
                     })
                     {
+                        ZStack{
+                            Rectangle()
+                                .fill(Color.black.opacity(0.5))
+                                .frame(width: 155, height: 155)
+                                .cornerRadius(12)
+                            
                         Image(uiImage: self.models[index].image)
                             .resizable()
-                            .frame(height: 150)
+                            .frame(width: 150, height: 150)
                             .aspectRatio(1/1, contentMode: .fit)
                             .background(Color.white)
                             .cornerRadius(12)
+                        }
                     }
                     
                 }

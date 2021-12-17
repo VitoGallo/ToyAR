@@ -50,13 +50,12 @@ class CustomARView: ARView, ObservableObject {
         config.planeDetection = [.horizontal, .vertical]
         config.environmentTexturing = .automatic
         
-//        if selectedModel = {
-        let coachingOverlay = ARCoachingOverlayView()
-        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        coachingOverlay.session = session
-        coachingOverlay.goal = .horizontalPlane
-        self.addSubview(coachingOverlay)
-//        }
+
+//        let coachingOverlay = ARCoachingOverlayView()
+//        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        coachingOverlay.session = session
+//        coachingOverlay.goal = .horizontalPlane
+//        self.addSubview(coachingOverlay)
 
         if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
             config.sceneReconstruction = .mesh
