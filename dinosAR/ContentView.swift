@@ -9,6 +9,7 @@ import SwiftUI
 import RealityKit
 import AudioToolbox
 import FocusEntity
+//import AVFoundation
 
 var sceneManager: SceneManager = SceneManager()
 
@@ -21,6 +22,8 @@ struct ContentView : View {
     @State var selectedModel: Model?
     @State var modelConfirmedForPlacement: Model?
     
+//    @State var audio: AVAudioPlayer?
+
     @EnvironmentObject var model: ModelDeletionManager
     @EnvironmentObject var arView: CustomARView
     
@@ -89,6 +92,8 @@ struct ControlView: View {
     
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
+    
+//    @Binding var audio: AVAudioPlayer?
     @State var shouldFlash = false
     
     
@@ -143,6 +148,8 @@ struct ControlBottomBar: View{
     @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
     @Binding var shouldFlash: Bool
+//    @Binding var audio: AVAudioPlayer?
+//    var nameAudio: String
     
     var body: some View{
         
@@ -186,6 +193,12 @@ struct ControlBottomBar: View{
                         .clipShape(Circle())
                         .shadow(radius: 10)
                 }
+//                .onTapGesture {
+//                    let sound = Bundle.main.path(forResource: model.currentImage, ofType: "mp3")
+//                    self.audio = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+//                    self.audio.play()
+////                    let sound = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
+//                }
             }
             Spacer()
             

@@ -14,7 +14,6 @@
 		AB3ACC3D276C6346002FFD4C /* toy_car.usdz in Resources */ = {isa = PBXBuildFile; fileRef = AB3ACC3B276C6346002FFD4C /* toy_car.usdz */; };
 		AB6170B12761628200DC0E8E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170B02761628200DC0E8E /* Model.swift */; };
 		AB6170B42761696E00DC0E8E /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = AB6170B32761696E00DC0E8E /* FocusEntity */; };
-		AB6170B82764F43100DC0E8E /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170B72764F43100DC0E8E /* ControlView.swift */; };
 		AB6170BA2764FE2D00DC0E8E /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170B92764FE2D00DC0E8E /* SheetView.swift */; };
 		AB6170BC2765161F00DC0E8E /* PlacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170BB2765161F00DC0E8E /* PlacementView.swift */; };
 		AB6170BE27651B0D00DC0E8E /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170BD27651B0D00DC0E8E /* CustomARView.swift */; };
@@ -22,7 +21,6 @@
 		AB6170C227665B6100DC0E8E /* shutter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB6170C127665B6100DC0E8E /* shutter.mp3 */; };
 		AB6F3CDC2760F73200B72786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F3CDB2760F73200B72786 /* AppDelegate.swift */; };
 		AB6F3CDE2760F73200B72786 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F3CDD2760F73200B72786 /* ContentView.swift */; };
-		AB6F3CE02760F73200B72786 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = AB6F3CDF2760F73200B72786 /* Experience.rcproject */; };
 		AB6F3CE22760F73400B72786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6F3CE12760F73400B72786 /* Assets.xcassets */; };
 		AB6F3CE52760F73400B72786 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6F3CE42760F73400B72786 /* Preview Assets.xcassets */; };
 		AB6F3CEF2760F73400B72786 /* dinosARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F3CEE2760F73400B72786 /* dinosARTests.swift */; };
@@ -59,7 +57,6 @@
 		AB3ACC3A276C6346002FFD4C /* toy_robot_vintage.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_robot_vintage.usdz; sourceTree = "<group>"; };
 		AB3ACC3B276C6346002FFD4C /* toy_car.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_car.usdz; sourceTree = "<group>"; };
 		AB6170B02761628200DC0E8E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		AB6170B72764F43100DC0E8E /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		AB6170B92764FE2D00DC0E8E /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		AB6170BB2765161F00DC0E8E /* PlacementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementView.swift; sourceTree = "<group>"; };
 		AB6170BD27651B0D00DC0E8E /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
@@ -68,7 +65,6 @@
 		AB6F3CD82760F73200B72786 /* dinosAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dinosAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6F3CDB2760F73200B72786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB6F3CDD2760F73200B72786 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AB6F3CDF2760F73200B72786 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		AB6F3CE12760F73400B72786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB6F3CE42760F73400B72786 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB6F3CEA2760F73400B72786 /* dinosARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dinosARTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,12 +136,10 @@
 				AB6F3CDD2760F73200B72786 /* ContentView.swift */,
 				AB6170BD27651B0D00DC0E8E /* CustomARView.swift */,
 				AB392194276BF94E00375942 /* Info.swift */,
-				AB6170B72764F43100DC0E8E /* ControlView.swift */,
 				AB6170B92764FE2D00DC0E8E /* SheetView.swift */,
 				AB6170BB2765161F00DC0E8E /* PlacementView.swift */,
 				AB6170B02761628200DC0E8E /* Model.swift */,
 				AB6170BF27655FA500DC0E8E /* ModelDeletionManager.swift */,
-				AB6F3CDF2760F73200B72786 /* Experience.rcproject */,
 				AB6170C127665B6100DC0E8E /* shutter.mp3 */,
 				AB392196276C019A00375942 /* track.gif */,
 				AB6F3CE12760F73400B72786 /* Assets.xcassets */,
@@ -344,8 +338,6 @@
 				AB6170BC2765161F00DC0E8E /* PlacementView.swift in Sources */,
 				AB6170BE27651B0D00DC0E8E /* CustomARView.swift in Sources */,
 				AB6F3CDC2760F73200B72786 /* AppDelegate.swift in Sources */,
-				AB6F3CE02760F73200B72786 /* Experience.rcproject in Sources */,
-				AB6170B82764F43100DC0E8E /* ControlView.swift in Sources */,
 				AB6170C027655FA500DC0E8E /* ModelDeletionManager.swift in Sources */,
 				AB6170B12761628200DC0E8E /* Model.swift in Sources */,
 				AB392195276BF94E00375942 /* Info.swift in Sources */,
