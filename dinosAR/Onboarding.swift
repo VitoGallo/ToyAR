@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Onboarding: View {
     @State var isShowed: Bool = false
-    @State var aaa: Bool = false
+    @State var firstOpen: Bool = false
     
     var body: some View {
         VStack {
@@ -78,7 +78,7 @@ struct Onboarding: View {
                                 .foregroundColor(Color.gray)
                             .multilineTextAlignment(.leading)}
                         .padding(.bottom)
-
+                        
                     }
                     .padding(.leading)
                     
@@ -89,7 +89,7 @@ struct Onboarding: View {
             }
             Button(action: {isShowed.toggle()
                 UserDefaults.standard.set(true, forKey: "LaunchBefore")
-                aaa.toggle()
+                firstOpen.toggle()
             }) {
                 Text("Continue")
                     .fontWeight(.semibold)
@@ -101,7 +101,7 @@ struct Onboarding: View {
             }
             .padding(.top, 90.0)
         }
-        .fullScreenCover(isPresented: $aaa){ContentView()}
+        .fullScreenCover(isPresented: $firstOpen){ContentView()}
     }
 }
 

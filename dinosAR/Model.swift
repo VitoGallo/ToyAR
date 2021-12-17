@@ -19,8 +19,6 @@ class Model{
     
     @EnvironmentObject var arView: CustomARView
     
-//    var installGestures: (_ gestures: ARView.EntityGestures, _ entity: HasCollision) -> [EntityGestureRecognizer]
-    
     private var cancellable: AnyCancellable?
     
     init (modelName: String, installGestureOnArkit: @escaping (ModelEntity) -> Void){
@@ -43,19 +41,12 @@ class Model{
             //Get our modelEntity
             self.modelEntity = modelEntity
             self.installGestures(on: modelEntity)
-            print(modelEntity.availableAnimations.count)
-//            modelEntity.playAnimation(modelEntity.availableAnimations.first!)
-//            arView.installGestures(.all, for: self)
-
-            
         })
     }
     
     func installGestures(on object: ModelEntity){
         object.generateCollisionShapes(recursive: true)
 //        arView.installGestures(.all, for: object)
-
-
         installGestureOnArkit(object)
     }
     

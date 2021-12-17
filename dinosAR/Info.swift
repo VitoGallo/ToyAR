@@ -10,7 +10,7 @@ import WebKit
 
 struct Info: View {
     @Binding var showInfo: Bool
-
+    
     var body: some View {
         VStack(alignment: .center){
             ZStack{
@@ -23,7 +23,7 @@ struct Info: View {
                     showInfo = false
                 }
             
-                
+            
             Text("Find a flat surface").font(.title)
                 .padding(.bottom, 30)
             
@@ -35,9 +35,9 @@ struct Info: View {
             Text("Find a flat surface. When the yellow box \nis parallel to the selected plane, \nyou are ready to place your toy.").font(.body)
                 .foregroundColor(Color.gray)
                 .multilineTextAlignment(.center)
-                
+            
             Spacer()
-
+            
             
             Button(action: {
                 showInfo = false
@@ -83,9 +83,5 @@ struct Gif: UIViewRepresentable{
     func updateUIView(_ uiView: WKWebView, context: Context) {
         uiView.reload()
     }
-    
-//    typealias UIViewType = WKWebView{
-//
-//    }
     
 }

@@ -10,6 +10,8 @@
 		AB392193276BB22200375942 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB392192276BB22200375942 /* Onboarding.swift */; };
 		AB392195276BF94E00375942 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB392194276BF94E00375942 /* Info.swift */; };
 		AB392197276C019A00375942 /* track.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB392196276C019A00375942 /* track.gif */; };
+		AB3ACC3C276C6346002FFD4C /* toy_robot_vintage.usdz in Resources */ = {isa = PBXBuildFile; fileRef = AB3ACC3A276C6346002FFD4C /* toy_robot_vintage.usdz */; };
+		AB3ACC3D276C6346002FFD4C /* toy_car.usdz in Resources */ = {isa = PBXBuildFile; fileRef = AB3ACC3B276C6346002FFD4C /* toy_car.usdz */; };
 		AB6170B12761628200DC0E8E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170B02761628200DC0E8E /* Model.swift */; };
 		AB6170B42761696E00DC0E8E /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = AB6170B32761696E00DC0E8E /* FocusEntity */; };
 		AB6170B82764F43100DC0E8E /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6170B72764F43100DC0E8E /* ControlView.swift */; };
@@ -54,6 +56,8 @@
 		AB392192276BB22200375942 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		AB392194276BF94E00375942 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		AB392196276C019A00375942 /* track.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = track.gif; sourceTree = "<group>"; };
+		AB3ACC3A276C6346002FFD4C /* toy_robot_vintage.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_robot_vintage.usdz; sourceTree = "<group>"; };
+		AB3ACC3B276C6346002FFD4C /* toy_car.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_car.usdz; sourceTree = "<group>"; };
 		AB6170B02761628200DC0E8E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AB6170B72764F43100DC0E8E /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		AB6170B92764FE2D00DC0E8E /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				AB6F3D0B2761406300B72786 /* fender_stratocaster.usdz */,
+				AB3ACC3B276C6346002FFD4C /* toy_car.usdz */,
+				AB3ACC3A276C6346002FFD4C /* toy_robot_vintage.usdz */,
 				AB6F3D0E2761406400B72786 /* gramophone.usdz */,
 				AB6F3D0D2761406400B72786 /* toy_biplane.usdz */,
 				AB6F3D0C2761406400B72786 /* toy_drummer.usdz */,
@@ -303,9 +309,11 @@
 				AB6F3D122761406500B72786 /* toy_biplane.usdz in Resources */,
 				AB6F3D142761406500B72786 /* tv_retro.usdz in Resources */,
 				AB6F3CE22760F73400B72786 /* Assets.xcassets in Resources */,
+				AB3ACC3C276C6346002FFD4C /* toy_robot_vintage.usdz in Resources */,
 				AB6F3D102761406500B72786 /* fender_stratocaster.usdz in Resources */,
 				AB6F3D112761406500B72786 /* toy_drummer.usdz in Resources */,
 				AB392197276C019A00375942 /* track.gif in Resources */,
+				AB3ACC3D276C6346002FFD4C /* toy_car.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

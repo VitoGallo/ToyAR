@@ -38,7 +38,7 @@ struct SheetView: View {
             let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
             let model = Model(modelName: modelName) {
                 model in
-//                arView.installGestures([.translation, .rotation, .scale], for: model)
+                //                arView.installGestures([.translation, .rotation, .scale], for: model)
             }
             
             avaibleModels.append(model)
@@ -49,18 +49,14 @@ struct SheetView: View {
     var body: some View {
         ZStack(alignment: .bottom){
             if showSheet{
-            Color.black
-                .opacity(startOpacity + (endOpacity - startOpacity) * dragPercentage)
-                .ignoresSafeArea()
-                .onTapGesture {
-                    showSheet = false
-                }
-            
-          
+                Color.black
+                    .opacity(startOpacity + (endOpacity - startOpacity) * dragPercentage)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        showSheet = false
+                    }
                 mainView.transition(.move(edge: .bottom))
             }
-//                .background(Color.white)
-//                .navigationBarTitle(Text("Select the object:"), displayMode: .large)
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             .ignoresSafeArea()
             .animation(.easeOut(duration: 2), value: 1.0)
@@ -75,29 +71,27 @@ struct SheetView: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.white.opacity(0.00001))
                 .gesture(dragGesture)
+            
+            VStack{
+                HStack{
+                    Text("Select the object:").font(.title2)
+                    Spacer()
+                }.padding(.horizontal, 22)
+                    .padding(.bottom, 10)
                 
-        VStack{
-            HStack{
-            Text("Select the object:").font(.title2)
-                Spacer()
-            }.padding(.horizontal, 22)
-                .padding(.bottom, 10)
-            
-            ModelPicker(showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel, models: self.models)
-            
-        }.frame(maxHeight: .infinity)
+                ModelPicker(showSheet: $showSheet, isPlacementEnabled: $isPlacementEnabled, selectedModel: $selectedModel, models: self.models)
+                
+            }.frame(maxHeight: .infinity)
                 .padding(.bottom, 40)
-           
-    }.frame(height: curHeight)
+            
+        }.frame(height: curHeight)
             .frame(maxWidth: .infinity)
-//            .background(Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
             .background(
                 ZStack{
                     RoundedRectangle(cornerRadius: 30)
                     Rectangle()
                         .frame(height: curHeight/2)
                 }.foregroundColor(Color.white)
-//                    .foregroundColor(Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
             ).animation(isDragging ? nil : .easeInOut(duration: 0.45), value: 1.0)
     }
     @State private var prevDragTranslation = CGSize.zero
@@ -129,9 +123,9 @@ struct SheetView: View {
                 }
             }
     }
-    }
-    
-    
+}
+
+
 
 
 struct ModelPicker: View{
@@ -143,9 +137,9 @@ struct ModelPicker: View{
     var models: [Model]
     
     var body: some View{
-    
+        
         ScrollView(.horizontal, showsIndicators: false){
-          
+            
             HStack(spacing: 15){
                 ForEach(0..<self.models.count) { index in
                     Button(action: {
@@ -162,22 +156,19 @@ struct ModelPicker: View{
                                 .frame(width: 155, height: 155)
                                 .cornerRadius(12)
                             
-                        Image(uiImage: self.models[index].image)
-                            .resizable()
-                            .frame(width: 150, height: 150)
-                            .aspectRatio(1/1, contentMode: .fit)
-                            .background(Color.white)
-                            .cornerRadius(12)
+                            Image(uiImage: self.models[index].image)
+                                .resizable()
+                                .frame(width: 150, height: 150)
+                                .aspectRatio(1/1, contentMode: .fit)
+                                .background(Color.white)
+                                .cornerRadius(12)
                         }
                     }
-                    
                 }
-
+                
             }.padding(.horizontal, 22)
-                    
-            }
-      
-
+            
+        }
     }
 }
 

@@ -15,11 +15,11 @@ class CustomARView: ARView, ObservableObject {
     var focusEntity: FocusEntity?
     var modelDeletionManager: ModelDeletionManager
     var entityNameSelected: String = ""
-
+    
     required init(frame frameRect: CGRect, modelDeletionManager: ModelDeletionManager) {
         
         self.modelDeletionManager = modelDeletionManager
-                        
+        
         super.init(frame: frameRect)
         
         focusEntity = FocusEntity(on: self, focus: .classic)
@@ -38,9 +38,7 @@ class CustomARView: ARView, ObservableObject {
     @objc required dynamic init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-//    func getstring() -> String?{
-//        return entityNameSelected
-//    }
+    
     
     private func configure(){
         
@@ -50,13 +48,13 @@ class CustomARView: ARView, ObservableObject {
         config.planeDetection = [.horizontal, .vertical]
         config.environmentTexturing = .automatic
         
-
-//        let coachingOverlay = ARCoachingOverlayView()
-//        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        coachingOverlay.session = session
-//        coachingOverlay.goal = .horizontalPlane
-//        self.addSubview(coachingOverlay)
-
+        
+        //        let coachingOverlay = ARCoachingOverlayView()
+        //        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        //        coachingOverlay.session = session
+        //        coachingOverlay.goal = .horizontalPlane
+        //        self.addSubview(coachingOverlay)
+        
         if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
             config.sceneReconstruction = .mesh
         }
@@ -74,21 +72,12 @@ extension CustomARView{
         
         let touchLocation = recognizer.location(in: self)
         if let entity = self.entity(at: touchLocation) as? ModelEntity{
-           
-
-//            print("DES\(entity.)")
+            
+            
             entityNameSelected = entity.name
-//            aaa = entityNameSelected
-//            print(entityNameSelected)
             modelDeletionManager.entitySelectedForDeletion = entity
-            print("AAAAA \(entity)")
             modelDeletionManager.updateCurrentImage(with: entity.name)
-            print("BBBBBB \(entity.name)")
         }
-        
-        
     }
-    
-    
 }
 
